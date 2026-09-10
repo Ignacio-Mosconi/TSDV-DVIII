@@ -1,0 +1,16 @@
+# Handle line endings automatically and force to use LF for the remote
+* text=auto eol=lf
+
+# Explicitly declare files that must always keep LF
+*.sh text eol=lf
+
+#Explicitly declare files that must always keep CRLF
+*.bat text eol=crlf
+
+# Mark as binary so that Git doesn't try to show diffs or attempt merges
+*.png binary
+*.jpg binary
+*.gif binary
+
+# Track large files for LFS
+*.psd filter=lfs diff=lfs merge=lfs -text
