@@ -1,0 +1,55 @@
+# Top-most EditorConfig file. Stop searching parent directories.
+root = true
+
+# Global settings for all files
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+
+# C# Scripting formatting rules
+[*.cs]
+indent_style = tab
+indent_size = 4
+
+# Force the Roslyn compiler to process formatting rules as real analyzer diagnostics
+dotnet_analyzer_diagnostic.category-Formatting.severity = warning
+dotnet_compiler_diagnostic.severity = warning
+
+# Make all formatting rules (including spaces) to suggestions
+dotnet_diagnostic.IDE0055.severity = suggestion
+
+# Unity C# Brace Style (Allman style: opening braces on a new line)
+dotnet_style_braces_on_new_line_for_methods = true
+dotnet_style_braces_on_new_line_for_types = true
+dotnet_style_braces_on_new_line_for_control_blocks = true
+
+# Naming Conventions based on Unity Style Guides
+# 1. Public fields/properties should be PascalCase
+dotnet_naming_rule.public_members_must_be_pascal_case.symbols = public_members
+dotnet_naming_rule.public_members_must_be_pascal_case.style = pascal_case_style
+dotnet_naming_rule.public_members_must_be_pascal_case.severity = suggestion
+
+# 2. Private fields should be camelCase (optionally prefixed with an underscore)
+dotnet_naming_rule.private_fields_must_be_camel_case.symbols = private_fields
+dotnet_naming_rule.private_fields_must_be_camel_case.style = camel_case_style
+dotnet_naming_rule.private_fields_must_be_camel_case.severity = suggestion
+
+# Enforce a space between method name and opening parenthesis in declarations
+csharp_space_between_method_declaration_name_and_open_parenthesis = true
+
+# Define the Naming Styles
+dotnet_naming_symbols.public_members.applicable_kinds = property, method, field
+dotnet_naming_symbols.public_members.applicable_accessibilities = public, internal
+
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+
+# Specific formatting rules for metadata and serializable files
+[*.json]
+indent_style = tab
+indent_size = 2
