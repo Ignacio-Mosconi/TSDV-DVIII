@@ -2,7 +2,8 @@ name: Build & Upload Artifact
 
 on:
   push:
-    branch: main
+    tags: 
+      - '*.*.*'
 
 env:
   buildName: My-Game
