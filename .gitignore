@@ -100,3 +100,31 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Wwise
+.backup
+.cache
+*.akd
+*.validationcache
+*.wsettings
+*.wem
+*.prof
+
+# Installation files
+WwiseUnityIntegration_*_Src.zip
+
+# Temporal cache
+/[Aa]ssets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
+
+# Sound Banks
+*WwiseProject/GeneratedSoundBanks/
+
+# Documentation
+/[Aa]ssets/Wwise/Documentation.meta
+/[Aa]ssets/Wwise/Documentation/*
+
+# Plugins
+/[Aa]ssets/Wwise/API/Runtime/Plugins.meta
+
+# Logs
+logRunSetup.txt
