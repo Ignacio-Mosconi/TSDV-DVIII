@@ -7,6 +7,7 @@ on:
 
 env:
   buildName: My-Game
+  itchio_channel: windows
 
 jobs:
   buildAndUploadArtifact:
@@ -41,8 +42,11 @@ jobs:
           versioning: None 
       
       # Uploads the build output as a GitHub artifact
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload Build to itch.io project
+        uses: robpc/itchio-upload-action@v1
         with:
-          name: ${{ env.buildName }}
-          path: build
+          path: build/StandaloneWindows
+          project: ${{ secrets.ITCHIO_PROJECT }}
+          channel: ${{ env.itchio_channel }}
+          version: ${{ github.ref_name }}
+          api-key: ${{ secrets.ITCHIO_API_KEY }}
