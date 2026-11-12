@@ -125,6 +125,7 @@ WwiseUnityIntegration_*_Src.zip
 
 # Plugins
 /[Aa]ssets/Wwise/API/Runtime/Plugins.meta
+/[Aa]ssets/Wwise/API/Runtime/Plugins/*
 
 # Logs
 logRunSetup.txt
